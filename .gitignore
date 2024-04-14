@@ -1,0 +1,80 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+shopping/
+venv/
+.virtualenv/
+
+# Cài đặt tạm thời và cache
+*.log
+*.pot
+*.pyi
+*.pyo
+*.swp
+*.swo
+*.tmp
+*.~*
+*.cover
+*.coverage
+*.hypothesis/
+.cache/
+.env
+.settings/
+.venv/
+
+# Cơ sở dữ liệu
+db.sqlite3
+db.backup/
+db_*_backup/
+
+# Migrations
+migrations/
+*/migrations/
+*/migrations/*.pyc
+
+# Thư mục tệp đa phương tiện hoặc tải lên
+media/
+static/
+staticfiles/
+
+# Tệp cài đặt môi trường và yêu cầu
+.idea/
+.settings/
+*.code-workspace
+*.editorconfig
+*.iml
+*.sublime-workspace
+
+# Node_modules và build artifacts
+node_modules/
+
+# Gói cài đặt
+*.egg-info/
+*.dist-info/
+
+# Thư mục .vscode (VS Code)
+.vscode/
+
+# Tài liệu (nếu sử dụng Sphinx)
+docs/build/
+
+# Các tệp tạm thời
+.DS_Store
+Thumbs.db
+
+# Tệp cài đặt hệ thống
+*.so
+*.dll
+*.dylib
+*.exe
+
+# Tệp cấu hình ngôn ngữ
+locale/
+
+# Pip cache
+__pypackages__/
+
+# Jupyter notebooks
+.ipynb_checkpoints/

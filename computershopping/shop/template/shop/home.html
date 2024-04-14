@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Golf Shopping</title>
+</head>
+<body>
+    <h1>Products</h1>
+    <ul>
+        {% for product in products %}
+        <li>
+            {{ product.name }} - ${{ product.price }}
+            <p>{{ product.description }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
