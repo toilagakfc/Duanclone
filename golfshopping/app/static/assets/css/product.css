@@ -1,0 +1,150 @@
+
+/*  */
+.category-collection-product{
+    min-height: 500px;
+    margin: 0px auto;
+    background: #ffffff;
+}
+/* Danh mục sản phẩm */
+.list-category-product{
+    width: 335px;
+    min-height: 500px;
+    margin-top: 40px;
+}
+
+.list-category-product h1{
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    text-transform: uppercase;
+    background: #BBBBBB;
+    text-align: center;
+    line-height: 50px;
+    /* display: block; */
+}
+
+
+.category-product{
+    width: 100%;
+    min-height: 500px;
+    margin-bottom: 60px;
+}
+.filler-product
+.arrange-product{
+    width: 100%;
+    min-height: 50px;
+
+}
+.fillter-product .fillter-item,
+.arrange-product .arrange-item,
+.category-product .category-item{
+    position: relative;
+    border-bottom: 1px solid #DEDEDE;
+}
+.fillter-product .fillter-item a,
+.arrange-product .arrange-item a,
+.category-product .category-item a {
+    color: #000;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    line-height: 40px;
+    padding: 5px 10px;
+}
+.fillter-product .fillter-item a:hover,
+.arrange-product .arrange-item a:hover,
+.category-product .category-item a:hover {
+    background: #DEDEDE;
+    transition: 0.3s ease;
+    padding: 5px 30px;
+}
+.fillter-product .fillter-item a i,
+.arrange-product .arrange-item a i,
+.category-product .category-item a i{
+    position: absolute;
+    right: 30px;
+    top: 15px;
+}
+.fillter-product .fillter-item .sub-fillter,
+.arrange-product .arrange-item .sub-arrange,
+.category-product .category-item .sub-category{
+    display: none;
+}
+.fillter-product .fillter-item .sub-fillter a,
+.arrange-product .arrange-item .sub-arrange a,
+.category-product .category-item .sub-category a{
+    padding-left: 30px;
+}
+.rotate{
+    transform: rotate(180deg);
+}
+
+
+/* sản phẩm */
+.collection-product{
+    width: 1045px;
+    min-height: 500px;
+    margin-top: 40px;
+}
+.collection-product h1{
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    text-transform: uppercase;
+    line-height: 50px;
+    margin: 0px 10px;
+}
+.list-product-title{
+    width: 410px;
+    height: 40px;
+}
+.list-product-title a{
+    height: 40px;
+    background: #DEDEDE;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: #000;
+    border-radius: 5px;
+}
+/* form */
+.form-horizontal{
+    width: 220px;
+    height: 40px;
+}
+.form-horizontal label{
+    width: 70px;
+}
+.form-horizontal select{
+    width: 150px;
+    height: 40px;
+}
+
+
+/* chia page */
+.page-list{
+    width: 100%;
+    min-height: 20px;
+    margin: 20px 0;
+}
+.page-list ul {
+    list-style: none;
+}
+.page-list ul li{
+    margin: 10px 2px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    line-height: 30px;
+    border-radius: 5px;
+}
+.page-list ul li a{
+    color: #000;
+    text-decoration: none;
+    /* border: 1px solid red; */
+    padding: 3px 5px;
+}
+
+.page-list ul li:hover{
+    background: #BBBBBB;
+}

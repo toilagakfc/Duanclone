@@ -3,9 +3,8 @@ __pycache__/
 *.py[cod]
 
 # Virtual environments
-shopping/
-venv/
-.virtualenv/
+env/
+.env/
 
 # Cài đặt tạm thời và cache
 *.log
@@ -36,7 +35,6 @@ migrations/
 
 # Thư mục tệp đa phương tiện hoặc tải lên
 media/
-static/
 staticfiles/
 
 # Tệp cài đặt môi trường và yêu cầu

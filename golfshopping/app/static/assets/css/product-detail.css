@@ -1,0 +1,412 @@
+
+
+.product-single {
+    min-height: 500px;
+    margin: 40px auto;
+    background: #ffffff;
+}
+/*chi tiết*/
+
+
+/*img*/
+
+.detail-product-list-img {
+    width: 49%;
+    height: 670px;
+}
+
+.detail-product-list-img img {
+    width: 680px;
+    height: 550px;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+.list-image {
+    display: flex;
+    width: 100%;
+    height: 100px;
+}
+
+.list-image div {
+    padding: 1px;
+}
+
+.list-image img {
+    width: 90px;
+    height: 90px;
+    margin: 4px;
+    border-radius: 15px;
+    padding: 1px;
+    border: 1px solid #DDDDDD;
+}
+
+.img-product {
+    position: relative;
+}
+
+.control {
+    position: absolute;
+    top: 240px;
+    font-size: 20px;
+    border: 1px dotted black;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.control:hover {
+    background: #97FFFF;
+}
+
+.prev {
+    left: 5px;
+}
+
+.next {
+    right: 5px;
+}
+
+.active {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+
+/*  */
+
+.detail-product-list-text {
+    width: 49%;
+    min-height: 500px;
+}
+
+.detail-product-list-text h1 {
+    font-size: 18px;
+    margin: 5px;
+}
+
+.detail-product-list-text .type-brand-code {
+    width: 100%;
+    height: auto;
+    margin: 5px;
+    padding: 5px 0;
+}
+
+.detail-product-list-text .type-brand-code .brand,
+.detail-product-list-text .type-brand-code .type {
+    width: 165px;
+    height: auto;
+    border-right: 2px solid black;
+    text-align: center;
+}
+
+.detail-product-list-text .type-brand-code .brand a,
+.detail-product-list-text .type-brand-code .type a {
+    text-decoration: none;
+    color: #000;
+    position: relative;
+}
+
+
+/* hover */
+
+.detail-product-list-text .type-brand-code .brand a:hover,
+.detail-product-list-text .type-brand-code .type a:hover {
+    font-weight: 600;
+}
+
+.detail-product-list-text .type-brand-code .brand a::before,
+.detail-product-list-text .type-brand-code .type a::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 0;
+    height: 1px;
+    background: #000;
+    transform-origin: left;
+    transition: width .5s;
+}
+
+.detail-product-list-text .type-brand-code .brand a:hover::before,
+.detail-product-list-text .type-brand-code .type a:hover::before {
+    width: 100%;
+}
+
+.detail-product-list-text .type-brand-code .code {
+    width: 350px;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+}
+
+.detail-product-list-text .list-price {
+    width: 400px;
+    height: auto;
+    padding: 5px;
+}
+
+.detail-product-list-text .list-price .price {
+    color: #BEBEBE;
+    font-size: 20px;
+}
+
+.detail-product-list-text .list-price .promotion-price {
+    color: #d30000;
+    font-size: 24px;
+}
+
+.detail-product-list-text .list-price .label-promotion {
+    color: #FF0000;
+}
+
+.shaft,
+.loft {
+    width: 500px;
+    height: 80px;
+    /* border: 1px solid red; */
+    margin: 5px;
+}
+
+.shaft .shaft-title,
+.loft .loft-title {
+    font-weight: 600;
+}
+
+.shaft .list-shaft,
+.loft .list-loft {
+    display: flex;
+    width: 100%;
+    min-height: 40px;
+    /* border: 1px solid black; */
+    /* line-height: 40px; */
+}
+
+.shaft .list-shaft a,
+.loft .list-loft a {
+    text-decoration: none;
+    color: #000;
+    margin: 6px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+
+/* .shaft .list-shaft label,
+.loft .list-loft label {
+    border: 1px solid black;
+    padding: 10px;
+} */
+
+
+
+/*  */
+
+.detail-product-textsale{
+    width: 100%;
+    height: 280px;
+    border-radius: 15px;
+}
+.detail-product-textsale h3{
+    padding: 5px;
+}
+.detail-product-textsale p{
+    color: #000;
+    font-size: 15px;
+    padding: 10px;
+}
+.detail-product-textsale small{
+    color: #000;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+    margin: 0px 10px;
+    border-bottom: 1px solid #414141;
+}
+.detail-product-textsale ul{
+    margin: 10px 26px;
+}
+.detail-product-textsale ul li{
+    margin: 15px 0;
+    font-size: 14px;
+    color: #000;
+}
+.detail-product-textsale ul li a{
+    text-decoration: none;
+    color: #2997ff;
+}
+.detail-product-endow-pay{
+    width: 100%;
+    min-height: 300px;
+    margin: 10px 0;
+}
+
+.btn-buy-full button{
+    font-size: 20px;
+    background: #296E38;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    margin: 0px 5px;
+    border: none;
+    cursor: pointer;
+    padding: 15px 0;
+}
+.btn-buy-full button a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding: 15px 283px;
+}
+.btn-pay-taichinh{
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn-pay-taichinh-text{
+    width: 330px;
+    height: 60px;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    background: #296E38;
+    border-radius: 12px;
+    font-size: 16px;
+    padding: 10px 0;
+    margin: 0 5px;
+}
+.detail-product-garantie{
+    width: 100%;
+    height: 200px;
+    list-style: none;
+    margin: 10px 0;
+
+}
+.detail-product-garantie li{
+    color: #000;
+    font-size: 15px;
+    margin: 15px 10px;
+}
+.detail-product-garantie li i{
+    font-size: 18px;
+    margin-right: 10px;
+}
+.detail-product-garantie li a{
+    color: #2997ff;
+    text-decoration: none;
+}
+/*  Thêm sản phẩm*/
+
+.add-product-detail {
+    width: 400px;
+    height: 50px;
+    /* border: 1px solid black; */
+    margin: 20px 5px;
+}
+
+.add-product button {
+    width: 170px;
+    padding: 15px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.add-product-detail button a {
+    text-decoration: none;
+    color: #000;
+    /* border: none; */
+}
+
+.add-product-detail button a i {
+    margin-left: 5px;
+}
+
+
+/* danh sách hình ảnh và quan tâm */
+
+.list-product-detail-img {
+    min-height: 700px;
+    margin: 40px auto;
+}
+
+
+/* Danh sách hình ảnh */
+
+.list-product-detail-img .product-list-img {
+    width: 69%;
+    min-height: 700px;
+}
+
+.list-product-detail-img .product-list-img-title {
+    width: 100%;
+    height: 50px;
+}
+
+.product-list-img-title .brand-option,
+.product-list-img-title .detail-option {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    background: #DDDDDD;
+}
+.product-list-img-title .brand-option{
+    background: none;
+}
+.product-list-img-title .brand-option a,
+.product-list-img-title .detail-option a {
+    text-decoration: none;
+    color: #000;
+    padding: 16px 90px;
+}
+.detail-list-img .title{
+    margin: 10px;
+}
+.list-product-detail-img .product-img{
+    width: 100%;
+    min-height: 500px;
+}
+
+.list-product-detail-img .product-img img{
+    width: 100%;
+    height: 600px;
+}
+.list-product-detail-img .product-note{
+    width: 90%;
+    height: 70px;
+    margin: 10px auto;
+    padding: 5px;
+    background: #A3E1FF;
+    border-radius: 10px;
+}
+/* có thể bạn quan tâm */
+
+.list-product-detail-img .maybe-you-care {
+    width: 30%;
+    min-height: 700px;
+}
+.maybe-you-care .news-new-product-item h3{
+    width: 100%;
+    height: 40px;
+    background: #296E38;
+    color: #ffffff;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+.new-product-item .promotion-price{
+    color: #FF0000;
+    margin-top: 5px;
+}
+.new-product-item .price{
+    color: #BEBEBE;
+    margin-top: 5px;
+}
+
+
