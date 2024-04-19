@@ -1,10 +1,367 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Golf Shopping</title>
-</head>
-<body>
-    <h1>App</h1>
+{% extends "base.html" %}
+{% load static %}
+{% block home %}
+<div class="wrapper">
+    <!-- banner -->
+    <div class="banner">
+        <div class="list-banner">
+            <div class="item-banner">
+                <img src="{%static "assets/image/banner-2.jpg" %}" alt="">
+            </div>
+            <div class="item-banner">
+                <img src="{%static "assets/image/banner-2.jpg" %}" alt="">
+            </div>
+            <div class="item-banner">
+                <img src="{%static "assets/image/banner-2.jpg" %}" alt="">
+            </div>
+            <div class="item-banner">
+                <img src="{%static "assets/image/banner-2.jpg" %}" alt="">
+            </div>
+            <div class="item-banner">
+                <img src="{%static "assets/image/banner-2.jpg" %}" alt="">
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <button id="next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <ul class="dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- sản phẩm mới -->
+    <div class="new-product container">
+        <!-- title -->
+        <div class="new-product-title display-flex">
+            <a href="#">Sản phẩm mới</a>
+        </div>
+        <!-- list product -->
+        <div class="list-new-product justify-content-space-between">
+            <!-- product -->
+            {% comment %} <?php foreach($newProduct as $np):?> {% endcomment %}
+            <div class="item-product">
+                <a href="#>"><img
+                        {% comment %} src="" {% endcomment %}
+                        alt=""></a>
+                <h3 class="product-title"><a href="#"></a></h3>
+                <span class="star">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </span>
+                <span class="promotion-price">50000<sup>đ</sup></span>
+                <span class="price"><del>100000<sup>đ</sup></del></span>
+                <span class="label-promotion">sale</span>
 
-</body>
-</html>
+                <div class="action-product display-flex">
+                    <button class="view-product"><a href="#"><i class="fa-solid fa-eye"></i></a></button>
+                    <button class="add-cart"><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></button>
+                </div>
+            </div>
+            {% comment %} <?php endforeach;?> {% endcomment %}
+        </div>
+        <div class="view-all display-flex">
+            <a href=""><i class="fa-solid fa-circle-chevron-right"></i> Xem tất cả</a>
+        </div>
+    </div>
+
+    <!-- sản phẩm sale -->
+    <div class="product-sale-special container">
+        <!--title  -->
+        <div class="product-sale-special-title display-flex">
+            <a href="#">Gậy golf sale đặc biệt</a>
+        </div>
+        <!-- list product -->
+        <div class="list-product-sale justify-content-space-between">
+            <!-- product -->
+            {% comment %} <?php foreach($stickGolfSpecial as $sgs): ?> {% endcomment %}
+            <div class="item-product">
+                <a href="#>"><img
+                        {% comment %} src="" {% endcomment %}
+                        alt=""></a>
+                <h3 class="product-title"><a href="#">gậy golf</a></h3>
+                <span class="star">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </span>
+                <span class="promotion-price">1000000<sup>đ</sup></span>
+                <span class="price"><del>500000<sup>đ</sup></del></span>
+                <span class="label-promotion">labelPromotion</span>
+
+                <div class="action-product display-flex">
+                    <button class="view-product"><a href="#"><i class="fa-solid fa-eye"></i></a></button>
+                    <button class="add-cart"><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></button>
+                </div>
+            </div>
+            {% comment %} <?php endforeach;?> {% endcomment %}
+        </div>
+        <div class="view-all display-flex">
+            <a href=""><i class="fa-solid fa-circle-chevron-right"></i> Xem tất cả</a>
+        </div>
+    </div>
+
+    <!-- banner flash sale -->
+    <div class="flash-sale-baner container">
+        <img src="https://golfcity.com.vn/wp-content/uploads/2023/05/gay-cho-nguoi-moi.jpg" alt="ERROR">
+    </div>
+
+    <!-- sản phẩm nổi bật -->
+    <div class="product-outstanding container">
+        <!--title  -->
+        <div class="product-outstanding-title display-flex">
+            <a href="#">Sản phẩm nổi bật</a>
+        </div>
+        <!-- list product -->
+        <div class="list-product-outstanding justify-content-space-between">
+            <!-- product -->
+            {% comment %} <?php foreach ($productOutstanding as $po): ?> {% endcomment %}
+                <div class="item-product">
+                    {% comment %} <a href="#"><img src="<?= $po['image'] ?>" alt=""></a> {% endcomment %}
+                    <a href="#"><img src="#" alt=""></a>
+                    <h3 class="product-title"><a href="#">
+                            {% comment %} <?= $po['productName'] ?> {% endcomment %}
+                            productName
+                        </a></h3>
+                    <span class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="promotion-price">
+                        1000000<sup>đ</sup>
+                    </span>
+                    <span class="price"><del>
+                            5000000<sup>đ</sup>
+                        </del></span>
+                    <span class="label-promotion">
+                        labelPromotion
+                    </span>
+
+                    <div class="action-product display-flex">
+                        <button class="view-product"><a href="#"><i class="fa-solid fa-eye"></i></a></button>
+                        <button class="add-cart"><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></button>
+                    </div>
+                </div>
+            {% comment %} <?php endforeach; ?> {% endcomment %}
+        </div>
+        <div class="view-all display-flex">
+            <a href=""><i class="fa-solid fa-circle-chevron-right"></i> Xem tất cả</a>
+        </div>
+    </div>
+
+    <!-- Thời trang golf -->
+    <div class="fashion-golf container">
+        <!--title  -->
+        <div class="fashion-golf-title display-flex">
+            <a href="#">Thời trang golf</a>
+        </div>
+        <!-- list product -->
+        <div class="list-fashion-golf justify-content-space-between">
+            <!-- product -->
+            {% comment %} <?php foreach ($fashionGolf as $fg) : ?> {% endcomment %}
+                <div class="item-product">
+                    <a href="#"><img
+                            src="#"
+                            alt=""></a>
+                    <h3 class="product-title"><a href="#">productName</a></h3>
+                    <span class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="promotion-price">10000000000<sup>đ</sup></span>
+                    <span class="price"><del>33333333333333<sup>đ</sup></del></span>
+                    <span class="label-promotion">labelPromotion</span>
+
+                    <div class="action-product display-flex">
+                        <button class="view-product"><a href="#"><i class="fa-solid fa-eye"></i></a></button>
+                        <button class="add-cart"><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></button>
+                    </div>
+                </div>
+            {% comment %} <?php endforeach; ?> {% endcomment %}
+        </div>
+        <div class="view-all display-flex">
+            <a href=""><i class="fa-solid fa-circle-chevron-right"></i> Xem tất cả</a>
+        </div>
+    </div>
+
+    <!-- banner flash sale -->
+    <div class="flash-sale-baner container justify-content-space-between">
+        <div class="list-banner-sale">
+            <img src="https://golfcity.com.vn/wp-content/uploads/2023/04/banner-giay-1.gif" alt="ERROR">
+        </div>
+        <div class="list-banner-sale">
+            <img src="https://golfcity.com.vn/wp-content/uploads/2023/02/file-in1-556-%C3%97-191-px-1920-%C3%97-600-px-575-%C3%97-450-px-1000-%C3%97-639-px-2.gif"
+                alt="ERROR">
+        </div>
+    </div>
+
+    <!-- sản phẩm túi golf -->
+    <div class="product-bag-golf container">
+        <!--title  -->
+        <div class="product-bag-golf-title display-flex">
+            <a href="#">túi golf</a>
+        </div>
+        <!-- list product -->
+        <div class="list-product-bag-golf justify-content-space-between">
+            <!-- product -->
+            {% comment %} <?php foreach($bagGolf as $bg) :?> {% endcomment %}
+            <div class="item-product">
+                <a href="#"><img
+                        src="#"
+                        alt=""></a>
+                <h3 class="product-title"><a href="#">productName</a></h3>
+                <span class="star">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </span>
+                <span class="promotion-price">100000000<sup>đ</sup></span>
+                <span class="price"><del>11111111111<sup>đ</sup></del></span>
+                <span class="label-promotion">labelPromotion</span>
+
+                <div class="action-product display-flex">
+                    <button class="view-product"><a href="#"><i class="fa-solid fa-eye"></i></a></button>
+                    <button class="add-cart"><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></button>
+                </div>
+            </div>
+            {% comment %} <?php endforeach;?> {% endcomment %}
+        </div>
+        <div class="view-all display-flex">
+            <a href=""><i class="fa-solid fa-circle-chevron-right"></i> Xem tất cả</a>
+        </div>
+    </div>
+
+    <!-- sản phẩm giày golf -->
+    <div class="product-shoe-golf container">
+        <!--title  -->
+        <div class="product-shoe-golf-title display-flex">
+            <a href="#">Giày golf</a>
+        </div>
+        <!-- list product -->
+        <div class="list-product-shoe-golf justify-content-space-between">
+            <!-- product -->
+            {% comment %} <?php foreach($shoeGolf as $sg) :?> {% endcomment %}
+            <div class="item-product">
+                <a href="#"><img
+                        src="<?= $sg['image'] ?>"
+                        alt=""></a>
+                <h3 class="product-title"><a href="#">productName</a></h3>
+                <span class="star">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </span>
+                <span class="promotion-price">3000000<sup>đ</sup></span>
+                <span class="price"><del>222222<sup>đ</sup></del></span>
+                <span class="label-promotion">labelPromotion</span>
+
+                <div class="action-product display-flex">
+                    <button class="view-product"><a href="#"><i class="fa-solid fa-eye"></i></a></button>
+                    <button class="add-cart"><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></button>
+                </div>
+            </div>
+            {% comment %} <?php endforeach;?> {% endcomment %}
+        </div>
+        <div class="view-all display-flex">
+            <a href=""><i class="fa-solid fa-circle-chevron-right"></i> Xem tất cả</a>
+        </div>
+    </div>
+
+    <!-- banner flash sale -->
+    <div class="flash-sale-baner container">
+        <img src="{% static "assets/image/banner-6.jpg.png" %}" alt="">
+    </div>
+
+    <!-- dịch vụ hàng đầu -->
+    <div class="top-service-golf container">
+        <div class="title-top-service display-flex">
+            <h1>dịch vụ hàng đầu tại golfshop</h1>
+        </div>
+        <div class="list-top-service">
+            {% comment %} <?php foreach($service as $se) :?> {% endcomment %}
+            <div class="top-service">
+                <img src="<?= $se['image']?>"
+                    alt="">
+                <h3>title</h3>
+                <p>content</p>
+                <div class="see-more display-flex">
+                    <a href="#"><i class="fa-solid fa-circle-chevron-right"></i> Xem thêm</a>
+                </div>
+            </div>
+            {% comment %} <?php endforeach; ?> {% endcomment %}
+        </div>
+    </div>
+
+    <!-- phần đặc trưng -->
+    <div class="section-featured container justify-content-space-between">
+        <div class="featured-inner justify-content-space-between">
+            <img src="https://golfgroup.com.vn/wp-content/themes/ggc/images/icons/ghht.svg" alt="">
+            <p>Giao hàng hỏa tốc</p>
+        </div>
+        <div class="featured-inner justify-content-space-between">
+            <img src="https://golfgroup.com.vn/wp-content/themes/ggc/images/icons/bdtd.svg" alt="">
+            <p>Bảo dưỡng trọn đời</p>
+        </div>
+        <div class="featured-inner justify-content-space-between">
+            <img src="https://golfgroup.com.vn/wp-content/themes/ggc/images/icons/card.svg" alt="">
+            <p>Thanh toán linh hoạt</p>
+        </div>
+        <div class="featured-inner justify-content-space-between">
+            <img src="https://golfgroup.com.vn/wp-content/themes/ggc/images/icons/1vs1.svg" alt="">
+            <p>Lỗi 1 đổi 1 tại nhà</p>
+        </div>
+    </div>
+    <div class="list-news-knowledge container justify-content-space-between">
+        <div class="list-news">
+            <div class="post-title justify-content-space-between">
+                <h3>Tin tức</h3>
+                <a href="#">Xem toàn bộ</a>
+            </div>
+            {% comment %} <?php foreach($newList as $nl) :?> {% endcomment %}
+            <div class="post-new align-items-start">
+                <a href="#"><img
+                        src="<?= $nl['image'] ?>"
+                        alt=""></a>
+                <h3 class="new-title"><a href="#">title</a>
+                </h3>
+            </div>
+            {% comment %} <?php endforeach; ?> {% endcomment %}
+        </div>
+        <div class="list-knowledge">
+            <div class="post-title justify-content-space-between">
+                <h3>Kiến thức golf</h3>
+                <a href="#">Xem toàn bộ</a>
+            </div>
+            {% comment %} <?php foreach($Knowledge as $kl) :?> {% endcomment %}
+            <div class="post-knowledge align-items-start">
+                <a href="#"><img
+                        src="<?= $kl['image'] ?>"
+                        alt=""></a>
+                <h3 class="knowledge-title"><a href="#">title
+                    </a>
+                </h3>
+            </div>
+            {% comment %} <?php endforeach; ?> {% endcomment %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

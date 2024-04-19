@@ -31,30 +31,30 @@
             <!-- header-top -->
             <div class="header-top container">
                 <div class="header-logo">
-                    <a href="#">golfshop</a>
+                    <a href="{% url "home" %}">golfshop</a>
                 </div>
                 <div class="header-search">
-                    <form action="#" method="post" role="search">
-                        <input type="text" placeholder="Tìm kiếm" name="keyword">
+                    <form action="{% url "search" %}" method="post" role="search">
+                        <input type="tetx" placeholder="Tìm kiếm" name="keyword">
                         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
                 </div>
                 <div class="header-login display-flex">
-                    {% comment %} <?php if (isset($_SESSION['user'])): ?> {% endcomment %}
-                        {% comment %} <a href="?mod=user&act=info"><i class="fa-solid fa-user"></i></a> {% endcomment %}
-                    {% comment %} <?php else: ?> {% endcomment %}
-                        <a href="#">Đăng nhập</a>
-                    {% comment %} <?php endif; ?> {% endcomment %}
+                    <?php if (isset($_SESSION['user'])): ?>
+                        <a href="?mod=user&act=info"><i class="fa-solid fa-user"></i></a>
+                    <?php else: ?>
+                        <a href="{% url "login" %}">Đăng nhập</a>
+                    <?php endif; ?>
                 </div>
                 <div class="header-cart display-flex">
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="?mod=cart&act=list"><i class="fa-solid fa-cart-shopping"></i></a>
                     <div class="">
                         <span id="amount-cart" class="count-cart">
-                            {% comment %} <?php if (isset($_SESSION['cart'])): ?> {% endcomment %}
-                                {% comment %} <?= count($_SESSION['cart']) ?> {% endcomment %}
-                            {% comment %} <?php else: ?> {% endcomment %}
+                            <?php if (isset($_SESSION['cart'])): ?>
+                                <?= count($_SESSION['cart']) ?>
+                            <?php else: ?>
                                 0
-                            {% comment %} <?php endif; ?> {% endcomment %}
+                            <?php endif; ?>
                         </span>
                     </div>
                 </div>
@@ -66,9 +66,9 @@
                 <div class="container new-menu justify-content-space-between">
                     <nav id="main-menu">
                         <ul class="display-flex">
-                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="{% url "home" %}">Trang chủ</a></li>
                             <li>
-                                <a href="#">Giới thiệu <i class="fa-solid fa-chevron-down"></i></a>
+                                <a href="{% url "about" %}">Giới thiệu <i class="fa-solid fa-chevron-down"></i></a>
                                 <ul class="submenu">
                                     <li><a href="#">Về chúng tôi</a></li>
                                     <li><a href="#">Đội ngũ chuyên gia</a></li>
@@ -77,28 +77,28 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">Sản phẩm <i class="fa-solid fa-chevron-down"></i></a>
+                                <a href="{% url "product" %}">Sản phẩm <i class="fa-solid fa-chevron-down"></i></a>
                                 <ul class="submenu">
-                                    {% comment %} <?php {% endcomment %}
-                                    {% comment %} $subcategoryList = $categoryList; {% endcomment %}
-                                    {% comment %} foreach ($categoryList as $item) { {% endcomment %}
-                                        {% comment %} if ($item['parentID'] == 0) { ?> {% endcomment %}
+                                    <?php
+                                    $subcategoryList = $categoryList;
+                                    foreach ($categoryList as $item) {
+                                        if ($item['parentID'] == 0) { ?>
                                             <li>
-                                                <a href="#>">test
-                                                    {% comment %} <?= $item['categoryName'] ?> {% endcomment %}
+                                                <a href="?mod=page&act=product&id=<?= $scl['categoriesID'] ?>">
+                                                    <?= $item['categoryName'] ?>
                                                 </a>
                                                 <ul class="submenu">
-                                                    {% comment %} <?php foreach ($subcategoryList as $scl) { {% endcomment %}
-                                                        {% comment %} if ($scl['parentID'] != 0 && $scl['parentID'] == $item['categoriesID']) { ?> {% endcomment %}
-                                                            <li><a href="#">submenuli1
-                                                                    {% comment %} <?= $scl['categoryName'] ?> {% endcomment %}
+                                                    <?php foreach ($subcategoryList as $scl) {
+                                                        if ($scl['parentID'] != 0 && $scl['parentID'] == $item['categoriesID']) { ?>
+                                                            <li><a href="?mod=page&act=product&id=<?= $scl['categoriesID'] ?>">
+                                                                    <?= $scl['categoryName'] ?>
                                                                 </a></li>
-                                                        {% comment %} <?php } {% endcomment %}
-                                                    {% comment %} } ?> {% endcomment %}
+                                                        <?php }
+                                                    } ?>
                                                 </ul>
                                             </li>
-                                        {% comment %} <?php } {% endcomment %}
-                                    {% comment %} } ?> {% endcomment %}
+                                        <?php }
+                                    } ?>
                                 </ul>
 
                             </li>
@@ -146,14 +146,14 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">Tin tức <i class="fa-solid fa-chevron-down"></i></a>
+                                <a href="{% url "news" %}">Tin tức <i class="fa-solid fa-chevron-down"></i></a>
                                 <ul class="submenu">
                                     <li><a href="#">Tin hoạt động</a></li>
                                     <li><a href="#">Tin ngành golf</a></li>
                                     <li><a href="#">Tin tuyển dụng</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Liên hệ </a></li>
+                            <li><a href="{% url "contact" %}">Liên hệ </a></li>
                         </ul>
                     </nav>
 
@@ -164,14 +164,21 @@
             </div>
         </header>
     </div>
-{% block home %}
-{% endblock %}  
+
+{% block home %} {% endblock %} 
+{% block about%} {% endblock %}
+{% block news %} {% endblock %}
+{% block contact %}{% endblock  %}
+{% block login %}{% endblock  %}
+{% block register %}{% endblock  %}
+{% block product %}{% endblock  %}
+    {% comment %} Footer {% endcomment %}
     <div id="wrapper">
         <footer id="footer">
             <div class="container justify-content-space-between">
                 <div class="footer-left">
                     <div class="footer-logo">
-                    <a href="#">golf shop</a>
+                    <a href="{% url "home" %}">golf shop</a>
                     </div>
                     <div class="operating-time">
                         <h3>Thời gian hoạt động</h3>
