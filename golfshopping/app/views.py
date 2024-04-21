@@ -1,10 +1,14 @@
 from django.shortcuts import render,redirect
-from django.template import Context,Template
+from .models import Category
 
 
 
 def homepage(request):
-    return render(request,'app/homePage.html')
+    categoryList = Category.objects.filter(parent__isnull=True,status='Active').values()
+    subcategoryList = Category.objects.filter(parent__isnull=False,status='Active').values()
+    context = {"categoryList":categoryList,
+               "subcategoryList":subcategoryList}
+    return render(request,'app/homePage.html',context)
 
 def about(request):
     return render(request,'app/pageAbout.html')

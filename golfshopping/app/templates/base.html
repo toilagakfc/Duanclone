@@ -79,28 +79,24 @@
                             <li>
                                 <a href="{% url "product" %}">Sản phẩm <i class="fa-solid fa-chevron-down"></i></a>
                                 <ul class="submenu">
-                                    <?php
-                                    $subcategoryList = $categoryList;
-                                    foreach ($categoryList as $item) {
-                                        if ($item['parentID'] == 0) { ?>
+                                        {% for cat  in categoryList  %}
                                             <li>
-                                                <a href="?mod=page&act=product&id=<?= $scl['categoriesID'] ?>">
-                                                    <?= $item['categoryName'] ?>
+                                                <a href="{% url "product" %}&id={{cat.categoryID}}">                                                   
+                                                    {{cat.categoryName}}
                                                 </a>
                                                 <ul class="submenu">
-                                                    <?php foreach ($subcategoryList as $scl) {
-                                                        if ($scl['parentID'] != 0 && $scl['parentID'] == $item['categoriesID']) { ?>
-                                                            <li><a href="?mod=page&act=product&id=<?= $scl['categoriesID'] ?>">
-                                                                    <?= $scl['categoryName'] ?>
-                                                                </a></li>
-                                                        <?php }
-                                                    } ?>
+                                                    {% for subcat in subcategoryList  %}                                                    
+                                                        {% if subcat.parent == cat.categoryID %}
+                                                            <li><a href="#">
+                                                                    {{subcat.categoryName}}
+                                                                </a>
+                                                            </li>                                            
+                                                        {% endif %}
+                                                    {% endfor %}   
                                                 </ul>
-                                            </li>
-                                        <?php }
-                                    } ?>
+                                            </li>                                     
+                                        {% endfor %}                                    
                                 </ul>
-
                             </li>
                             <li>
                                 <a href="#">Thương hiệu <i class="fa-solid fa-chevron-down"></i></a>
