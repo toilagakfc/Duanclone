@@ -1,13 +1,17 @@
 from django.shortcuts import render,redirect
-from .models import Category
+from .models import *
 
 
 
 def homepage(request):
-    categoryList = Category.objects.filter(parent__isnull=True,status='Active').values()
-    subcategoryList = Category.objects.filter(parent__isnull=False,status='Active').values()
+    # categoryList = Category.objects.filter(parent__isnull=True,status='Active').values()
+    categoryList = Category.objects.filter(parent__isnull=True,status='1').values()
+    subcategoryList = Category.objects.filter(parent__isnull=False,status='1').values()
+    products = Products.objects.filter(isHot=1).values()
     context = {"categoryList":categoryList,
-               "subcategoryList":subcategoryList}
+               "subcategoryList":subcategoryList,
+               "products":products
+               }
     return render(request,'app/homePage.html',context)
 
 def about(request):

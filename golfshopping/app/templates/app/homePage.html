@@ -43,11 +43,12 @@
         <div class="list-new-product justify-content-space-between">
             <!-- product -->
             {% comment %} <?php foreach($newProduct as $np):?> {% endcomment %}
+            {% for product in products  %}
             <div class="item-product">
-                <a href="#>"><img
+                <a href="{% url "product" %}"><img
                         {% comment %} src="" {% endcomment %}
                         alt=""></a>
-                <h3 class="product-title"><a href="#"></a></h3>
+                <h3 class="product-title"><a href="{% url "product" %}"></a></h3>
                 <span class="star">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -55,15 +56,16 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                 </span>
-                <span class="promotion-price">50000<sup>đ</sup></span>
-                <span class="price"><del>100000<sup>đ</sup></del></span>
-                <span class="label-promotion">sale</span>
-
+                <span class="promotion-price">{{product.promotionalPrice}}<sup>đ</sup></span>
+                <span class="price"><del>{{product.price}}<sup>đ</sup></del></span>
+                <span class="label-promotion">{{product.labelPromotion}}</span>
+                {% comment %} <span class="label-promotion">{{product.categoryName}}</span> {% endcomment %}
                 <div class="action-product display-flex">
                     <button class="view-product"><a href="#"><i class="fa-solid fa-eye"></i></a></button>
                     <button class="add-cart"><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></button>
                 </div>
             </div>
+            {% endfor %}
             {% comment %} <?php endforeach;?> {% endcomment %}
         </div>
         <div class="view-all display-flex">
